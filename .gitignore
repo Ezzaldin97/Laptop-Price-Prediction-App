@@ -1,2 +1,7 @@
 # all files in data directory..
 data/
+
+
+# all python cache files
+./app/__pycache__/
+./__pycache__
