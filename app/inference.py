@@ -25,8 +25,8 @@ class Inference:
         return sum(spaces_lst) 
     def transform(self) -> dict():
         transformed_data = dict()
-        transformed_data["Ram"] = self.json_file["Ram"][:-2]
-        transformed_data["Weight"] = self.json_file["Weight"][:-2]
+        transformed_data["Ram"] = int(self.json_file["Ram"][:-2])
+        transformed_data["Weight"] = float(self.json_file["Weight"][:-2])
         transformed_data["CPU_manufacturer"] = self.json_file["Cpu"].split()[0]
         transformed_data["CPU_frequency"] = self.json_file["Cpu"].split()[-1]
         transformed_data["CPU_frequency"] = transformed_data["CPU_frequency"][:-3]
