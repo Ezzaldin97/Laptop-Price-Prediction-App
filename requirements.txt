@@ -3,3 +3,4 @@ scikit-learn==1.2.1
 lightgbm==3.3.5
 hyperopt==0.2.7
 Flask==2.2.2
+pydantic==1.10.2
