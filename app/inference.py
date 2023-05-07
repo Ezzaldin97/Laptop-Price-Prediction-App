@@ -4,14 +4,13 @@ import pickle
 import re
 import numpy as np
 from app.config_parser import Config
-from typing import Dict, List, Any
 
 conf = Config()
 
 class Inference:
     def __init__(self, json_file) -> None:
         self.json_file = json_file
-        self.model = pickle.load(os.path.join("bin", "model-pipeline.pkl"))
+        self.model = pickle.load(os.path.join(".", "app", "bin", "model-pipeline.pkl"))
         self.cat_cols_indices = conf.config["categorical_columns_indices"]
         self.num_cols_indices = conf.config["numerical_columns_indices"]
     @staticmethod
@@ -24,7 +23,7 @@ class Inference:
                 else:
                     spaces_lst.append(int(re.findall("\d+", val)[0]))
         return sum(spaces_lst) 
-    def transform(self) -> Dict[Any]:
+    def transform(self) -> dict():
         transformed_data = dict()
         transformed_data["Ram"] = self.json_file["Ram"][:-2]
         transformed_data["Weight"] = self.json_file["Weight"][:-2]
@@ -52,7 +51,7 @@ class Inference:
         transformed_data["total_storage"] = Inference.handle_storage_space(self.json_file["Memory"])
         transformed_data["GPU_manufacturer"] = self.json_file["Gpu"].split()[0]
         return transformed_data
-    def predict(self, data:Dict[Any]) -> np.array:
+    def predict(self, data:dict()) -> np.array:
         prediction = self.model.predict(np.array(list(data.values())).reshape(1,-1))
         return prediction
         
