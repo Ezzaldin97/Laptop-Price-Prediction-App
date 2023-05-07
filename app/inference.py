@@ -28,7 +28,7 @@ class Inference:
         transformed_data["Ram"] = self.json_file["Ram"][:-2]
         transformed_data["Weight"] = self.json_file["Weight"][:-2]
         transformed_data["CPU_manufacturer"] = self.json_file["Cpu"].split()[0]
-        transformed_data["CPU_frequency"] = self.json_file["Cpu"].split()[1]
+        transformed_data["CPU_frequency"] = self.json_file["Cpu"].split()[-1]
         transformed_data["CPU_frequency"] = transformed_data["CPU_frequency"].split()[:-3]
         transformed_data["CPU_frequency"] = float(transformed_data["CPU_frequency"])
         transformed_data["CPU_model"] = self.json_file["Cpu"].split()[1:-1]
