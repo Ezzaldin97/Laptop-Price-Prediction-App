@@ -1,4 +1,3 @@
-import json
 import os
 import pickle
 import re
@@ -10,7 +9,8 @@ conf = Config()
 class Inference:
     def __init__(self, json_file) -> None:
         self.json_file = json_file
-        self.model = pickle.load(os.path.join(".", "app", "bin", "model-pipeline.pkl"))
+        with open(os.path.join(".", "app", "bin", "model-pipeline.pkl"), "rb") as model:
+            self.model = pickle.load(model)
         self.cat_cols_indices = conf.config["categorical_columns_indices"]
         self.num_cols_indices = conf.config["numerical_columns_indices"]
     @staticmethod
