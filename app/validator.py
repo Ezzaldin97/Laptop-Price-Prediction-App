@@ -1,4 +1,5 @@
 from pydantic import BaseModel, validator
+import re
 
 class Laptop(BaseModel):
     laptop_ID: int
@@ -45,6 +46,21 @@ class Laptop(BaseModel):
         if provider not in ["Intel", "AMD", "Samsung"]:
             raise ValueError("invalid CPU Provider")
         return value
+    
+    @validator('Weight')
+    def valid_weight_format(cls, value):
+        pattern = r"[\d\.]+[kg]+"
+        if re.match(pattern=pattern, string=value):
+            raise ValueError("invalid Weight input")
+        return value
+    
+    @validator('Ram')
+    def valid_ram_format(cls, value):
+        pattern = r"[\d]+[GB]+"
+        if re.match(pattern=pattern, string=value):
+            raise ValueError("invalid RAM input")
+        return value
+    
     
     
         
