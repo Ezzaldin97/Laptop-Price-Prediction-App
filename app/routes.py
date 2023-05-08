@@ -13,12 +13,12 @@ model = pickle.load(open(os.path.join(".", "app", "bin", "model-pipeline.pkl"), 
 def home_page():
     return jsonify({"Greetings":"Hello"})
 
-@app.route('/predict/', methods=['POST'])
+@app.route('/predict/', methods=["POST"])
 def predict():
     data = request.get_json(force=True)
     # validate the data before give to model pipeline..
     try:
-        Laptop(data)
+        Laptop(**data)
         inf = Inference(data)
         transformed_data = inf.transform()
         prediction = inf.predict(transformed_data)
