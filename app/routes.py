@@ -9,8 +9,11 @@ import pydantic
 model = pickle.load(open(os.path.join(".", "app", "bin", "model-pipeline.pkl"), "rb"))
 
 @app.route('/')
+@app.route('/home/', methods=["GET"])
+def home_page():
+    return jsonify({"Greetings":"Hello"})
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict/', methods=['POST'])
 def predict():
     data = request.get_json(force=True)
     # validate the data before give to model pipeline..
