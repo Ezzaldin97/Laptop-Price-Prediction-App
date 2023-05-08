@@ -55,5 +55,5 @@ class Inference:
         return transformed_data
     def predict(self, data:dict()) -> np.array:
         prediction = self.model.predict(pd.DataFrame([data]))
-        return prediction
+        return prediction[0]
         
