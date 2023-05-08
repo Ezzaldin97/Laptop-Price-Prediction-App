@@ -4,3 +4,4 @@ lightgbm==3.3.5
 hyperopt==0.2.7
 Flask==2.2.2
 pydantic==1.10.2
+PyYAML==6.0
