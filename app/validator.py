@@ -34,14 +34,14 @@ class Laptop(BaseModel):
     
     @validator('Gpu')
     def valid_gpu_provider(cls, value):
-        provider = value.split[0]
+        provider = value.split()[0]
         if provider not in ['Intel', 'AMD', 'Nividia', 'ARM']:
             raise ValueError("invalid GPU Provider")
         return value
     
     @validator('Cpu')
     def valid_cpu_provider(cls, value):
-        provider = value.split[0]
+        provider = value.split()[0]
         if provider not in ["Intel", "AMD", "Samsung"]:
             raise ValueError("invalid CPU Provider")
         return value
