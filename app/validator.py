@@ -59,8 +59,4 @@ class Laptop(BaseModel):
         pattern = r"[\d]+[GB]+"
         if not re.match(pattern=pattern, string=value):
             raise ValueError("invalid RAM input")
-        return value
-    
-    
-    
-        
+        return value       
