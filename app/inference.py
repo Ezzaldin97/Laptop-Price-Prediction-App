@@ -3,6 +3,7 @@ import pickle
 import re
 import numpy as np
 from app.config_parser import Config
+import pandas as pd
 
 conf = Config()
 
@@ -11,8 +12,6 @@ class Inference:
         self.json_file = json_file
         with open(os.path.join(".", "app", "bin", "model-pipeline.pkl"), "rb") as model:
             self.model = pickle.load(model)
-        self.cat_cols_indices = conf.config["categorical_columns_indices"]
-        self.num_cols_indices = conf.config["numerical_columns_indices"]
     @staticmethod
     def handle_storage_space(x:str) -> int:
         spaces_lst = []
@@ -55,6 +54,6 @@ class Inference:
         transformed_data["GPU_manufacturer"] = self.json_file["Gpu"].split()[0]
         return transformed_data
     def predict(self, data:dict()) -> np.array:
-        prediction = self.model.predict(np.array(list(data.values())).reshape(1,-1))
+        prediction = self.model.predict(pd.DataFrame([data]))
         return prediction
         
