@@ -50,14 +50,14 @@ class Laptop(BaseModel):
     @validator('Weight')
     def valid_weight_format(cls, value):
         pattern = r"[\d\.]+[kg]+"
-        if re.match(pattern=pattern, string=value):
+        if not re.match(pattern=pattern, string=value):
             raise ValueError("invalid Weight input")
         return value
     
     @validator('Ram')
     def valid_ram_format(cls, value):
         pattern = r"[\d]+[GB]+"
-        if re.match(pattern=pattern, string=value):
+        if not re.match(pattern=pattern, string=value):
             raise ValueError("invalid RAM input")
         return value
     
