@@ -1,0 +1,21 @@
+# all files in data directory..
+data/
+
+
+# all python cache files
+app/__pycache__/
+__pycache__/
+tests/__pycache__/
+
+# ignore json directory
+test-json-files/
+
+#ignore tests
+tests/
+
+#ignore development notebooks
+dev/
+
+# ignore images and readme
+imgs/
+*.md
