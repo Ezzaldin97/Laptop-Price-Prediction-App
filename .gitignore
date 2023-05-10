@@ -5,6 +5,7 @@ data/
 # all python cache files
 app/__pycache__/
 __pycache__/
+tests/__pycache__/
 
 # ignore json directory
 test-json-files/
