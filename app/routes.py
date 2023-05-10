@@ -6,8 +6,6 @@ from app.validator import Laptop
 from app import app
 import pydantic
 
-model = pickle.load(open(os.path.join("app", "bin", "model-pipeline.pkl"), "rb"))
-
 @app.route('/')
 @app.route('/home/', methods=["GET"])
 def home_page():
