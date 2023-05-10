@@ -12,7 +12,7 @@ conf = Config()
 class Inference:
     def __init__(self, json_file) -> None:
         self.json_file = json_file
-        with open(os.path.join("app", "bin", "model-pipeline.pkl"), "rb") as model:
+        with open("app/bin/model-pipeline.pkl", "rb") as model:
             self.model = pickle.load(model)
     @staticmethod
     def handle_storage_space(x:str) -> int:
