@@ -1,6 +1,4 @@
-from flask import Flask, request, jsonify
-import pickle
-import os
+from flask import request, jsonify
 from app.inference import Inference
 from app.validator import Laptop
 from app import app
