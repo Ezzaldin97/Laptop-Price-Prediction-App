@@ -6,3 +6,4 @@ hyperopt==0.2.7
 Flask==2.2.2
 pydantic==1.10.2
 PyYAML==6.0
+pytest==7.1.2
