@@ -39,6 +39,7 @@ jobs:
         pytest -v
   push:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Push Docker Image  
       uses: mr-smithers-excellent/docker-build-push@v6
