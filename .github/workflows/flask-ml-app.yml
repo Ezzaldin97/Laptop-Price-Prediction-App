@@ -37,16 +37,13 @@ jobs:
     - name: Test with pytest
       run: |
         pytest -v
-
-
-  push_img:
-
+  push:
     runs-on: ubuntu-latest
     steps:
-    - uses: mr-smithers-excellent/docker-build-push@v6
-    - name: Push Docker Image
+    - name: Push Docker Image  
+      uses: mr-smithers-excellent/docker-build-push@v6
       with:
-        image: ezzaldin/laptop-prices-ml-app
+        image: ezzaldin/time_calculator
         registry: docker.io
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASSWORD }}
