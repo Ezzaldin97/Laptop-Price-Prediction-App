@@ -7,5 +7,5 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # to make port 5200 available to users..
 EXPOSE 5200
-
-CMD ["python", "run.py"]
+# run WSGI server on port 5200..
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5200" , "app:app"]
