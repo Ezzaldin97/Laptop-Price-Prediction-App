@@ -38,3 +38,8 @@ if there are Invalid Data, Response will be
 ```
 
 ## Tech & Dependancies:
+
+- Python 3.10
+- Docker
+- Github Actions
+- Knowledge About ML
