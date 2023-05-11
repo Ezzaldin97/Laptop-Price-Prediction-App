@@ -36,3 +36,5 @@ if there are Invalid Data, Response will be
     "error": "Invalid Data"
 }
 ```
+
+## Tech & Dependancies:
