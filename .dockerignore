@@ -19,3 +19,6 @@ dev/
 # ignore images and readme
 imgs/
 *.md
+
+# ignore docker file ...
+Dockerfile
