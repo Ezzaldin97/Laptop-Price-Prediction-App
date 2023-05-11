@@ -41,5 +41,12 @@ if there are Invalid Data, Response will be
 
 - Python 3.10
 - Docker
-- Github Actions
+- Github Actions-CI/CD Pipeline
 - Knowledge About ML
+
+## Data:
+
+[Laptop Prices](https://www.kaggle.com/datasets/muhammetvarl/laptop-price)
+
+## Project Development:
+
