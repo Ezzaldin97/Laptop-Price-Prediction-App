@@ -86,4 +86,7 @@ transformed_data["GPU_manufacturer"] = self.json_file["Gpu"].split()[0]
 ```
  and Predict the Laptop Price.
  - Create Data Validation Module to Validate raw data before start the transformation and prediction.
- 
+ - Using Flask Create API for the Prediction Model, and After API Development, Start Testing it Using Python Scripts or Using Specialized tool Like Postman for API Testing Like the Following
+![](imgs/dev-api-test.PNG)
+![](imgs/invalid-data-api-test.PNG)
+![](imgs/missing-data-api-test.PNG)
