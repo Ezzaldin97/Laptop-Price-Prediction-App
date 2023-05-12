@@ -50,3 +50,4 @@ if there are Invalid Data, Response will be
 
 ## Project Development:
 
+![](imgs/dev-to-registry.PNG)
