@@ -90,3 +90,5 @@ transformed_data["GPU_manufacturer"] = self.json_file["Gpu"].split()[0]
 ![](imgs/dev-api-test.PNG)
 ![](imgs/invalid-data-api-test.PNG)
 ![](imgs/missing-data-api-test.PNG)
+- Create Dockerfile that will be used to create a docker registry for the API Service.
+- Create CI/CD Pipeline Using Github Actions to Test using pytest the Inference Module and Data Validator, then deploy the Docker Image to DockerHub. 
