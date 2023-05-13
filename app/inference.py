@@ -6,13 +6,14 @@ from app.config_parser import Config
 import pandas as pd
 import sys
 sys.path.append(os.path.abspath("."))
+from pathlib import Path
 
 conf = Config()
 
 class Inference:
     def __init__(self, json_file) -> None:
         self.json_file = json_file
-        with open("app/bin/model-pipeline.pkl", "rb") as model:
+        with open(Path(os.path.join(os.getcwd(), "app", "bin", "model-pipeline.pkl")).absolute(), "rb") as model:
             self.model = pickle.load(model)
     @staticmethod
     def handle_storage_space(x:str) -> int:
